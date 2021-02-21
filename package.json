@@ -1,0 +1,36 @@
+{
+  "name": "grassroot-react-app",
+  "version": "0.0.1",
+  "description": "an empty app best suited as the basis for any react project",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack serve --open --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Stefan Begerad",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "@babel/core": "*",
+    "@babel/preset-env": "*",
+    "@babel/preset-react": "*",
+    "babel-loader": "*",
+    "clean-webpack-plugin": "^3.0.0",
+    "html-webpack-plugin": "*",
+    "react": "*",
+    "react-bootstrap": "^1.4.3",
+    "react-dom": "*",
+    "react-router-bootstrap": "^0.25.0",
+    "react-router-dom": "^5.2.0",
+    "webpack": "*",
+    "webpack-dev-server": "*"
+  },
+  "devDependencies": {
+    "css-loader": "^5.0.2",
+    "file-loader": "^6.2.0",
+    "style-loader": "^2.0.0",
+    "url-loader": "^4.1.1",
+    "webpack-cli": "*",
+    "webpack-merge": "^5.7.3"
+  }
+}

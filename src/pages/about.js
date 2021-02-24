@@ -1,5 +1,4 @@
 /*
-grassroot-react-app
 Copyright (C) 2021  Stefan Begerad
 
 This program is free software: you can redistribute it and/or modify

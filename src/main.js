@@ -15,24 +15,34 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-import React from 'react';  
-import About from "./pages/about";
-import Contact from "./pages/contact";
-import Home from "./pages/home";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import React, { useState, useRef } from 'react';
+import { ThemeProvider } from 'styled-components';
+import { useOnClickOutside } from './hooks';
+import { GlobalStyles } from './global';
+import { theme } from './theme';
+import { Burger, Menu } from './components';
 
-const Main=()=>
-{
-    return(
-    <>
-        <Router>
-            <Switch>
-                <Route exact path="/" component={Home} />
-                <Route path="/about" component={About} />
-                <Route path="/contact" component={Contact} />
-            </Switch>
-        </Router>
-    </>
-    ); 
+function App() {
+  const [open, setOpen] = useState(false);
+  const node = useRef();
+  const menuId = "main-menu";
+
+  useOnClickOutside(node, () => setOpen(false));
+
+  return (
+	  <ThemeProvider theme={theme}>
+	  <>
+          <GlobalStyles />
+          <div ref={node}>
+          <Burger open={open} setOpen={setOpen} aria-controls={menuId} />
+	  <Menu open={open} setOpen={setOpen} id={menuId} />
+      </div>
+	  <div>
+	  <h1>Hello.</h1>
+      </div>
+      </>
+      </ThemeProvider>
+  );
 }
-export default Main;
+
+export default App;
